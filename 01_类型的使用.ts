@@ -3,14 +3,14 @@ let num: number = 1
 let num2: number = 0b1    // 2进制
 let num8: number = 0o1    // 8进制
 let num16: number = 0x1   // 16进制
-console.log(num, num2, num8, num16);
+// console.log(num, num2, num8, num16);
 
 
 // # boolean类型
 let flag: boolean = true;
 flag = false;
 flag = 20 > 30;
-console.log(flag);
+// console.log(flag);
 
 
 // # string类型
@@ -37,12 +37,12 @@ const person = {
   [s1]: 'coder',
   [s2]: 'worker'
 }
-console.log(person);
+// console.log(person);
 
 // # undefined , null
 let n: null = null;
 let u: undefined = undefined
-console.log(n, u);
+// console.log(n, u);
 
 // # any类型
 let a: any
@@ -73,7 +73,7 @@ function sum(num1: number, num2: number): void {
   console.log(num1 + num2);
   // return num1 + num2
 }
-sum(1, 2)
+// sum(1, 2)
 // sum('a', 'b')
 
 // # never
@@ -99,3 +99,10 @@ function handlerMessage(message: number | string | boolean) {
   }
 }
 handlerMessage(true)
+
+// # tuple
+const info: [string, number, number] = ['venkat', 180, 18]
+const name_ = info[0]
+name_.length
+
+export {}
