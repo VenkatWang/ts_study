@@ -54,4 +54,37 @@ foo__1(3)
 
 // # 必选参数，参数默认值，可选参数
 
+// # 函数的重载
+// ~ 函数的名称相同，但是参数不同的几个函数，就是函数的重载
+// ~ 使用联合类型可以简单实现的没有必要使用函数的重载
+
+// * 普通用法，使用联合类型以及进行类型的缩小进行编写，相对来说比较麻烦
+function add_(a1: number | string, a2: number | string) {
+  // return a1 + a2
+  if (typeof a1 === 'number' && typeof a2 === 'number') {
+    return a1 + a2
+  }
+  if (typeof a1 === 'string' && typeof a2 === 'string') {
+    return a1 + a2
+  }
+}
+// * 函数的重载
+// * 从上往下依次查找
+function _add(num1: number, num2: number): number;
+function _add(num1: string, num2: string): string;
+
+function _add(num1: any, num2: any): any {
+  if (typeof num1 === 'string' && typeof num2 === 'string') {
+    return num1.length + num2.length
+  }
+  return num1 + num2
+}
+const result = _add(10, 20);
+const result1 = _add('hello', 'venkat');
+
+// * 在函数的重载中，实现函数是不能直接被调用的
+// _add({ name: 'venkat' }, { name: 'keven' })
+
+console.log(result, result1);
+
 export { }
