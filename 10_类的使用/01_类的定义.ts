@@ -22,3 +22,5 @@ person.eating()
 
 
 export { }
+
+// # 类的特性:  [抽象] 封装 继承 多态 
